@@ -361,7 +361,11 @@ export default {
         console.log('Клиент успешно создан!');
         alert('Клиент успешно создан!')
         for (let item in this.formData) {
-            this.formData[item] = ''
+            if (typeof this.formData[item] === "object") {
+                this.formData[item] = []
+            } else {
+                this.formData[item] = ''
+            }
         }
         for (let item in this.formAdres) {
             this.formAdres[item] = ''
